@@ -1,0 +1,12 @@
+{
+  "build": {
+    "builder": "nixpacks"
+  },
+  "deploy": {
+    "startCommand": "npm run api",
+    "numReplicas": 1,
+    "restartPolicyMaxRetries": 10,
+    "mem": 512,
+    "cpu": 250
+  }
+}

@@ -46,10 +46,12 @@ git push -u origin main
 ```
 
 **Replace:**
+
 - `YOUR_USERNAME` with your GitHub username
 - `clipvault` with your repo name (if different)
 
 **Example:**
+
 ```powershell
 git remote add origin https://github.com/nabin/clipvault.git
 git branch -M main
@@ -57,6 +59,7 @@ git push -u origin main
 ```
 
 **You'll be asked for credentials:**
+
 - **Option 1:** Enter GitHub username/password
 - **Option 2:** Use Personal Access Token (recommended)
   - Go to GitHub Settings → Developer settings → Personal access tokens
@@ -87,11 +90,12 @@ git push -u origin main
 
 1. In Railway Dashboard, click **"New Project"**
 2. Choose **"Deploy from GitHub repo"**
-3. Authorize Railway to access your GitHub  
+3. Authorize Railway to access your GitHub
 4. Select your `clipvault` repo
 5. Click **"Deploy"**
 
 Railway will automatically:
+
 - ✅ Detect Node.js from `package.json`
 - ✅ Install dependencies
 - ✅ Run `npm run api` to start the server
@@ -205,6 +209,7 @@ Both GitHub, Netlify, and Railway will **automatically redeploy**! No manual ste
 ## **Troubleshooting**
 
 ### **Push to GitHub fails**
+
 ```powershell
 # Check if remote is set
 git remote -v
@@ -220,15 +225,18 @@ git push -u origin main
 ```
 
 ### **Railway deployment fails**
+
 - Check logs: **Deployments** → Click latest → **View logs**
 - Most common: Missing `npm run build` or `npm start`
 - We use `npm run api` which is in `package.json` ✅
 
 ### **Netlify shows 404**
+
 - Make sure `VITE_API_URL` is set in environment variables
 - Redeploy Netlify after setting env var
 
 ### **Download doesn't work**
+
 - Check Netlify build log for errors
 - Test Railway API: `https://your-railway-url/api/health`
 - Should return 200 OK with JSON
@@ -261,6 +269,7 @@ git show main
 ## **You're Set! 🎉**
 
 Your ClipVault is now:
+
 - ✅ On GitHub (backed up + version controlled)
 - ✅ Deployed to Railway (backend running)
 - ✅ Deployed to Netlify (frontend live)
@@ -268,6 +277,7 @@ Your ClipVault is now:
 - ✅ Working for users worldwide
 
 **Next:**
+
 - Share the Netlify URL with friends!
 - Test with real videos
 - Monitor performance in Railway + Netlify dashboards
@@ -288,9 +298,9 @@ git add .
 git commit -m "Fixed download speed"
 git push
 
-# That's it! 
+# That's it!
 # ✅ GitHub updated
-# ✅ Netlify redeploying  
+# ✅ Netlify redeploying
 # ✅ Railway redeploying
 # ✅ Live in 2-3 minutes!
 ```
